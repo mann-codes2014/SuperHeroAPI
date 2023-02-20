@@ -4,13 +4,13 @@ namespace SuperHeroAPI.Services.SuperHeroService
 {
     public interface ISuperHeroService
     {
-        List<SuperHero> GetAllHeros();
+        Task<List<SuperHero>?> GetAllHeros();
 
-        SuperHero? GetSingleHero(int id);
+        Task<SuperHero?> GetSingleHero(int id);
 
-        List<SuperHero> AddSingleHero([FromBody] SuperHero superHero);
-        List<SuperHero>? UpdateSingleHero(int id, [FromBody] SuperHero superHero);
+        Task<List<SuperHero>?> AddSingleHero([FromBody] SuperHero superHero);
+        Task<List<SuperHero>?> UpdateSingleHero(int id, [FromBody] SuperHero superHero);
 
-        List<SuperHero>? DeleteSingleHero(int id);
+        Task<List<SuperHero>?> DeleteSingleHero(int id);
     }
 }

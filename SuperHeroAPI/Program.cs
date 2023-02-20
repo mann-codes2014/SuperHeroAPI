@@ -1,5 +1,7 @@
 
 global using SuperHeroAPI.Models;
+global using SuperHeroAPI.Data;
+
 using SuperHeroAPI.Services.SuperHeroService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ISuperHeroService, SuperHeroService>();
+builder.Services.AddDbContext<DataContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
